@@ -9,3 +9,8 @@ Vou seguir uma linha que acho, que será a mais simples de entender os conceitos
 - O que é docker ?
 - O porque trabalhar com containers ?
 - Primeiros passos
+
+---
+# Referências
+
+- [Api docker](https://github.com/portworx/docker_docs/blob/master/docs/reference/api/docker_remote_api.md)
