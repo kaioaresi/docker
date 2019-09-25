@@ -1,8 +1,8 @@
 # O que é `container` ?
 
-Container é nada mais que um isolamento de recursos, que roda dentro de uma instancia, porém containers compartilham recursos do OS ao qual está sendo executado, diferente das maquinas virtuais, o contianer não precisa de recursos como kernel e driver, pense em um container como lojas de um shopping, cada loga tem sua propria caracteristicas e tamanho, mas todas compartilham os recursos do shopping em sí, todas estão detro da estrutura do shopping.
+Container é nada mais que um isolamento de recursos, que roda dentro de uma instância, porém containers compartilham recursos do, OS ao qual está sendo executado, diferente das maquinas virtuais, o contianer não precisa de recursos como kernel e driver, pense em um container como lojas de um shopping, cada loja tem a sua próprias características e tamanho, mas todas compartilham os recursos do shopping em si, todas estão dentro da estrutura do shopping.
 
-A utilização dos containers se da atravez a utilização de imagens, que podem ou não estar já pré configuradas.
+A utilização dos containers se da atravez da utilização de imagens, que podem ou não estar já pré configuradas.
 
 Sabendo desta informação vamos entender qual o papel do `Docker`
 
