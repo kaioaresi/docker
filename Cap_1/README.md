@@ -1,11 +1,24 @@
 # O que é `container` ?
 
-Container é nada mais que um isolamento de recursos, que roda dentro de uma instância, porém containers compartilham recursos do, OS ao qual está sendo executado, diferente das maquinas virtuais, o contianer não precisa de recursos como kernel e driver, pense em um container como lojas de um shopping, cada loja tem a sua próprias características e tamanho, mas todas compartilham os recursos do shopping em si, todas estão dentro da estrutura do shopping.
+Container em resumo é uma tecnologia que permite ao enjaulamento de processo e/ou isolamento de contexto, dentro de um host. Containers **não são virtualização**, pois, apenas compartilham recursos do host como `OS` e `Kernel`, já uma virtualização emula um `SO` por completo.
 
-A utilização dos containers se da atravez da utilização de imagens, que podem ou não estar já pré configuradas.
+Os containers vieram para permitir que um usuário possam acessar um mesmo recursos, encapsulando processos e recursos de forma que um usuário não impacte outro usuário, ou seja, cada usuário teria o seu próprio ambiente isolado dentro de um mesmo host e/ou OS.
 
-Sabendo desta informação vamos entender qual o papel do `Docker`
+> A ideia do que atualmente chamamos de tecnologia de containers surgiu inicialmente no ano 2000 como jails do FreeBSD, uma tecnologia que permite particionar um sistema FreeBSD em vários subsistemas ou celas (por isso o nome "jails"). Os jails foram desenvolvidos como ambientes seguros que podiam ser compartilhados por um administrador de sistemas com vários usuários internos ou externos à empresa. O propósito do jail era a criação de processos em um ambiente modificado por chroot (no qual o acesso ao sistema de arquivos, rede e usuários é virtualizado), que não pudesse escapar ou comprometer o sistema como um todo. A implementação dele era limitada, e os métodos de escape do ambiente em jail foram descobertos com o tempo.
 
+_https://www.redhat.com/pt-br/topics/containers/whats-a-linux-container_
+
+O LXC (linux containers) é um internface que permite utilizar libs e recursos do kernel linux, através de uma API e algumas ferramentas em baixo nível. O LXC utiliza várias features do kernel, como `namespaces`, `chroots` e `cgroups` dentre outras.
+
+
+- Kernel namespaces (ipc, uts, mount, pid, network and user)
+- Apparmor and SELinux profiles
+- Seccomp policies
+- Chroots (using pivot_root)
+- Kernel capabilities
+- CGroups (control groups)
+
+---
 # O que é `Docker` ?
 
 `Docker` é uma tecnologia que facilita manusear containers, com o docker você consegue realizar várias funcionalidades com containers de forma muito simples, para mais informações segue [link](https://docs.docker.com/)
