@@ -10,9 +10,6 @@ Vou seguir uma linha que acho, que será a mais simples de entender os conceitos
 - O porque trabalhar com containers ?
 - Primeiros passos
 
-
-
-
 ---
 # Referências
 
@@ -26,3 +23,5 @@ Vou seguir uma linha que acho, que será a mais simples de entender os conceitos
 - [Namespace, o que é?](https://medium.com/@lets00/namespace-14c4e64d0559)
 - [Namespaces](https://escotilhalivre.wordpress.com/2015/08/12/namespaces/)
 - [jails](https://www.freebsd.org/doc/handbook/jails.html)
+- [Namespaces 7](http://man7.org/linux/man-pages/man7/namespaces.7.html)
+- [Linux namespaces](https://en.wikipedia.org/wiki/Linux_namespaces)

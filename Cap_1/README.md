@@ -1,17 +1,30 @@
 # O que é `container` ?
 
-Container em resumo é uma tecnologia que permite ao enjaulamento de processo e/ou isolamento de contexto, dentro de um host. Containers **não são virtualização**, pois, apenas compartilham recursos do host como `OS` e `Kernel`, já uma virtualização emula um `SO` por completo.
+Container em resumo é uma tecnologia que permite ao enjaulamento de processo e/ou isolamento de contexto, dentro de um host. Containers **não são virtualização**, pois, apenas compartilham recursos do host como `OS` e `Kernel`, já uma virtualização emula um `OS` por completo.
 
 Os containers vieram para permitir que um usuário possam acessar um mesmo recursos, encapsulando processos e recursos de forma que um usuário não impacte outro usuário, ou seja, cada usuário teria o seu próprio ambiente isolado dentro de um mesmo host e/ou OS.
 
-> A ideia do que atualmente chamamos de tecnologia de containers surgiu inicialmente no ano 2000 como jails do FreeBSD, uma tecnologia que permite particionar um sistema FreeBSD em vários subsistemas ou celas (por isso o nome "jails"). Os jails foram desenvolvidos como ambientes seguros que podiam ser compartilhados por um administrador de sistemas com vários usuários internos ou externos à empresa. O propósito do jail era a criação de processos em um ambiente modificado por chroot (no qual o acesso ao sistema de arquivos, rede e usuários é virtualizado), que não pudesse escapar ou comprometer o sistema como um todo. A implementação dele era limitada, e os métodos de escape do ambiente em jail foram descobertos com o tempo.
+> A ideia do que atualmente chamamos de tecnologia de containers surgiu inicialmente no ano 2000 como jails do FreeBSD, uma tecnologia que permite particionar um sistema FreeBSD em vários subsistemas ou celas (por isso o nome "jails"). Os jails foram desenvolvidos como ambientes seguros que podiam ser compartilhados por um administrador de sistemas com vários usuários internos ou externos à empresa. O propósito do jail era a criação de processos em um ambiente modificado por `chroot` (no qual o acesso ao sistema de arquivos, rede e usuários é virtualizado), que não pudesse escapar ou comprometer o sistema como um todo. A implementação dele era limitada, e os métodos de escape do ambiente em jail foram descobertos com o tempo.
 
 _https://www.redhat.com/pt-br/topics/containers/whats-a-linux-container_
 
-O LXC (linux containers) é um internface que permite utilizar libs e recursos do kernel linux, através de uma API e algumas ferramentas em baixo nível. O LXC utiliza várias features do kernel, como `namespaces`, `chroots` e `cgroups` dentre outras.
+O `jails do FreeBSD` foi um precursor do LXC (linux containers), que é um internface que permite utilizar libs e recursos do kernel linux, através de uma API e algumas ferramentas em baixo nível. O LXC utiliza várias features do kernel, como `namespaces`, `chroots` e `cgroups` dentre outras.
 
-
+## Namespace de sistema
 - Kernel namespaces (ipc, uts, mount, pid, network and user)
+
+Permite realizar isolamento de contexto e/ou processos, em um mesmo host. Com namespace podemos ter vários processos com mesmo `PID` sem termos problemas de conflito, com o escopo global do kernel like `Unix`.
+
+Existem atualmente 6 tipos de namespaces, são eles:
+
+- Mount - Controle de pontos de monstagem
+- PID - Controla os PID do namespace
+- Network - Controle que virtualiza a rede
+- User ID - Fornece privileio ao usuário virtualmente, dentro do namespace
+- UTS - Os namespaces UTS permitem que um único sistema pareça ter diferentes nomes de host e domínio para diferentes processos.
+- IPC - Os namespaces do IPC isolam processos da comunicação entre processos no estilo SysV. Isso evita que processos em diferentes espaços de nomes IPC usem, por exemplo, a família de funções SHM para estabelecer um intervalo de memória compartilhada entre os dois processos. Em vez disso, cada processo poderá usar os mesmos identificadores para uma região de memória compartilhada e produzir duas dessas regiões distintas.
+> https://en.wikipedia.org/wiki/Linux_namespaces
+
 - Apparmor and SELinux profiles
 - Seccomp policies
 - Chroots (using pivot_root)
